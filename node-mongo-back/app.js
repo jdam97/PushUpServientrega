@@ -1,10 +1,12 @@
 import express from "express";
 import "dotenv/config"
-import {connectDB} from "./db/atlas.js"
+import vehiculos from "./routes/vehiculosRoutes.js"
 
 const app = express();
 app.use(express.json())
 
+//Endpoints
+app.use("/vehiculos",vehiculos)
 
 
 let config = JSON.parse(process.env.MY_SERVER);
