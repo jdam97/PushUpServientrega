@@ -68,7 +68,7 @@ export const deleteEnvios = async(req,res)=>{
 //Update
 export const updateEnvios = async(req,res)=>{
     try {
-        const data = await envios.actualizarEnvios(req.body._id,req.body);
+        const data = await envios.actualizarEnvios(req.params._id,req.body);
         res.status(200).send({
             message:"Nice!",
             data

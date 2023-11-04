@@ -68,7 +68,7 @@ export const deleteEmpleados = async(req,res)=>{
 //Update
 export const updateEmpleados = async(req,res)=>{
     try {
-        const data = await empleados.actualizarEmpleados(req.body._id,req.body);
+        const data = await empleados.actualizarEmpleados(req.params._id,req.body);
         res.status(200).send({
             message:"Nice!",
             data

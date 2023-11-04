@@ -68,7 +68,7 @@ export const deleteSurcursales = async(req,res)=>{
 //Update
 export const updateSurcursales = async(req,res)=>{
     try {
-        const data = await surcursales.actualizarSurcursales(req.body._id,req.body);
+        const data = await surcursales.actualizarSurcursales(req.params._id,req.body);
         res.status(200).send({
             message:"Nice!",
             data
