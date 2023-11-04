@@ -1,0 +1,69 @@
+use("servientregaDB");
+db.createCollection("sucursales");
+db.createCollection("empleados");
+db.createCollection("envios");
+db.createCollection("vehiculos");
+
+use("servientregaDB");
+db.sucursales.insertMany([
+  {
+    nombre: "Sucursal A",
+    ubicacion: {
+      direccion: "Calle 10",
+      ciudad: "Bucaramanga",
+      pais: "Colombia"
+    }
+  },
+  {
+    nombre: "Sucursal B",
+    ubicacion: {
+      direccion: "Calle 20",
+      ciudad: "Medellin",
+      pais: "Colombia"
+    }
+  }
+]);
+
+use("servientregaDB");
+db.empleados.insertMany([
+  {
+    nombre: "Jean Angarita",
+    edad: 20,
+    identificacion: "1005184202",
+    telefono: "3224097916",
+    cargo: "Gerente",
+    fechaInicio: "2023-11-10",
+    sucursal: "65451b06608371ed31504675"
+  }
+]);
+
+use("servientregaDB");
+db.vehiculos.insertMany([
+  {
+    nombre: "R8",
+    marca: "Audi",
+    modelo: "2023"
+  },
+  {
+    nombre: "Captiva",
+    marca: "Chevrolet",
+    modelo: "2019"
+  }
+])
+
+use("servientregaDB");
+db.envios.insertMany([
+  {
+    sucursalOrigen: "65451b06608371ed31504675",
+    sucursalDestino:  "65451b06608371ed31504676",
+    fechaEnvio: "2023-09-10",
+    fechaEntrega: "2023-09-15",
+    estado: "entregado",
+    producto: {
+      _id: new ObjectId(),
+      nombre: "Botines Adidas",
+      cantidad: 2
+    },
+    vehiculo: "65451ecf984276807d11558a"
+  }
+])
