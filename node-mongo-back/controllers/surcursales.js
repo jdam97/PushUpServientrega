@@ -1,42 +1,42 @@
-import * as vehiculos from "../services/vehiculos.js"
+import * as surcursales from "../services/surcursales.js"
 
-//All vehiculos
-export const getAllAutos = async(req,res)=>{
+//get all
+export const getAllSurcursales = async(req,res)=>{
     try {
-        const data = await vehiculos.getVehiculos();
+        const data = await surcursales.getSurcursales();
         res.status(200).send({
             message:"Nice!",
             data
         })
     } catch (error) {
         res.status(500).send({
-            message:"No se pudo obtener todos los vehiculos",
+            message:"No se pudo obtener toda la consulta",
             error:error.message
         })
 
     }
 }
 
-//Vehiculos by id
-export const getVehiculosById = async(req,res)=>{
+//get by id
+export const getSurcursalesById = async(req,res)=>{
     try {
-        const data = await vehiculos.getVehiculosById(req.body._id);
+        const data = await surcursales.getSurcursalesById(req.body._id);
         res.status(200).send({
             message:"Nice!",
             data
         })
     } catch (error) {
         res.status(500).send({
-            message:"No se pudo obtener vehiculos por id",
+            message:"No se pudo obtener por id",
             error:error.message
         })
     }
 }
 
 //Post
-export const postVehiculos = async(req,res)=>{
+export const postSurcursales = async(req,res)=>{
     try {
-        const data = await vehiculos.PostVehiculos(req.body);
+        const data = await surcursales.PostSurcursales(req.body);
         res.status(200).send({
             message:"Nice!",
             data
@@ -50,9 +50,9 @@ export const postVehiculos = async(req,res)=>{
 }
 
 //Delete
-export const deleteVehiculos = async(req,res)=>{
+export const deleteSurcursales = async(req,res)=>{
     try {
-        const data = await vehiculos.deleteVehiculos(req.body._id);
+        const data = await surcursales.deleteSurcursales(req.body._id);
         res.status(200).send({
             message:"Nice!",
             data
@@ -66,9 +66,9 @@ export const deleteVehiculos = async(req,res)=>{
 }
 
 //Update
-export const updateVehiculos = async(req,res)=>{
+export const updateSurcursales = async(req,res)=>{
     try {
-        const data = await vehiculos.actualizarVehiculos(req.params._id,req.body);
+        const data = await surcursales.actualizarSurcursales(req.body._id,req.body);
         res.status(200).send({
             message:"Nice!",
             data

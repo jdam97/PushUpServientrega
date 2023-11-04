@@ -37,11 +37,12 @@ export const deleteVehiculos = async(HospedajesID)=>{
 }
 
 //Update
-export const actualizarVehiculos= async(contratos_id,req)=>{
+export const actualizarVehiculos= async(id,value)=>{
     let db = await connectDB();
     let collection = db.collection('vehiculos');
-    let datos = req.body
-    let data = await collection.updateOne({_id:new ObjectId(contratos_id) },{$set:datos})
+    console.log(value);
+    console.log(id);
+    let data = await collection.updateOne({_id:new ObjectId(id) },{$set:value})
     return data
 }
 

@@ -4,9 +4,9 @@ import * as vehiculosConsulta from "../controllers/vehiculos.js"
 const vehiculos = Router();
 
 vehiculos.get("/",vehiculosConsulta.getAllAutos)
-vehiculos.get("/vehiculosid",vehiculosConsulta.getVehiculosById)
+vehiculos.get("/id",vehiculosConsulta.getVehiculosById)
 vehiculos.post("/",vehiculosConsulta.postVehiculos)
 vehiculos.delete("/",vehiculosConsulta.deleteVehiculos)
-vehiculos.put("/",vehiculosConsulta.updateVehiculos)
+vehiculos.put("/:_id",vehiculosConsulta.updateVehiculos)
 
 export default vehiculos;
